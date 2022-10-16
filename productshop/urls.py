@@ -22,4 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("home/", get_home),
     path("products/<int:product_id>", get_product),
+    path("products/product-detail", get_product),  # templates task
 ]
