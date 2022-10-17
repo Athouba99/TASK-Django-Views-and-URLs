@@ -13,14 +13,16 @@ Including another URLconfproductshop/urls.py
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from itertools import product
 from django.contrib import admin
 from django.urls import path
-from products.views import get_home
+from products.views import get_home, get_products
 from products.views import get_product
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("home/", get_home),
-    path("products/<int:product_id>/", get_product, name="product_list"),
-    path("products/product-detail/", get_product),  # templates task
+    path("home/", get_home, name="home"),
+    path("product/<int:product_id>/", get_product, name="product_detail"),
+    # templates task
+    path("products/", get_products, name="product_list"),
 ]
