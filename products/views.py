@@ -25,18 +25,20 @@ def get_product(request, product_id):
             "price": product.price,
         }
     }
-
     return render(
         request,
-        "product_detail.html",
-    )
-
-    # return HttpResponse(
+        "product-detail.html",
+    )  # render means to show
+    # return HttpResponse( [only for V&R task no need for it for template ]
     #     f"""
-    #     <h1> {product.name}</h1>
-    #     <h2> {product.price}</h2>
-    #     """,
+    #      <h1> {product.name}</h1>
+    #      <h2> {product.price}</h2>
+    #      """,
     # )
+
+
+def get_products(request, product_id):  # template task
+    ...
 
 
 def render_context_with_context(html_data, context_data):
