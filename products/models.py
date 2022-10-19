@@ -6,5 +6,5 @@ class Product(models.Model):
     price = models.FloatField()
     description = models.TextField()
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.name}, {self.price}KD"

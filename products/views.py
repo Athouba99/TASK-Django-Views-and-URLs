@@ -25,7 +25,7 @@ def get_product(request, product_id):
             "price": product.price,
         }
     }
-    # render means to show
+    # render means to show & it calls the html page
     return render(request, "product-detail.html", context)
 
     # return HttpResponse( [only for V&R task no need for it for template ]
@@ -37,8 +37,17 @@ def get_product(request, product_id):
 
 
 def get_products(request, product_id):  # template task
-    product = Product.objects.all()
-    context = {
-        "products": product,
-    }
+    products = Product.objects.all()
+    new_products = []
+    # use the loop to control the data
+    for product in products:
+        new_products.append(
+            {
+                "name": product.name,
+                "description": product.description,
+                "price": product.price,
+            }
+        )
+    context = {"products": new_products}
+
     return render(request, "product-list.html")

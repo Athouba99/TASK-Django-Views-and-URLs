@@ -16,13 +16,12 @@ Including another URLconfproductshop/urls.py
 from itertools import product
 from django.contrib import admin
 from django.urls import path
-from products.views import get_home, get_products
-from products.views import get_product
+from products.views import get_home, get_products, get_product
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("home/", get_home, name="home"),
-    path("product/<int:product_id>/", get_product, name="product_detail"),
-    # templates task
     path("products/", get_products, name="product_list"),
+    path("products/<int:product_id>/", get_product, name="product_detail"),
 ]

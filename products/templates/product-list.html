@@ -7,6 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container"> PRODUCTS</div>
+    <div class="container"> 
+        <h1> PRODUCTS </h1>
+        <!-- for loop forating in html -->
+        {% for product in products %}
+        <div>
+            <p> {{ product.name}} </p>
+            <p> {{ product.description}} </p>
+            <p> {{ product.proce}} </p>
+
+        {& endfor &}
+        </div>
+    </div>
 </body>
 </html>
