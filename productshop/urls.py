@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from products.views import get_home, get_products, get_product
 
+from djreservation import urls as djreservation_urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,3 +26,5 @@ urlpatterns = [
     path("products/", get_products, name="product_list"),
     path("products/<int:product_id>/", get_product, name="product_detail"),
 ]
+
+urlpatterns += djreservation_urls.urlpatterns

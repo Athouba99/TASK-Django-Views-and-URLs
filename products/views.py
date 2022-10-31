@@ -50,4 +50,4 @@ def get_products(request, product_id):  # template task
         )
     context = {"products": new_products}
 
-    return render(request, "product-list.html")
+    return render(request, "product-list.html", context)
